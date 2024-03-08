@@ -59,6 +59,7 @@ export default {
         toggle() {
             if (this.cardState.collapsible) {
                 this.cardState.collapsed = !this.cardState.collapsed;
+                this.$emit(this.cardState.collapsed ? 'collapse' : 'expand');
             }
         },
         remove() {
