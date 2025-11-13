@@ -1,20 +1,30 @@
 <template>
     <header class="card-header"
         :class="[{ 'collapsed': cardState.collapsed }, { 'is-clickable': cardState.collapsible}]">
-        <p class="card-header-title"
+        <p class="card-header-title is-flex"
             @click="toggle">
             <slot name="title"/>
         </p>
-        <slot name="controls"/>
+        <div class="is-flex is-flex-shrink-3 min-w-0 overflow-scroll no-scrollbars">
+            <slot name="controls"/>
+        </div>
+        <card-collapse v-if="collapsible"/>
     </header>
 </template>
 
-<script>
-export default {
-    name: 'CardHeader',
+<script setup>
+import { inject, defineProps } from 'vue';
+import CardCollapse from '../controls/CardCollapse.vue';
 
-    inject: ['cardState', 'toggle'],
-};
+defineProps({
+    collapsible: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const cardState = inject('cardState');
+const toggle = inject('toggle');
 </script>
 
 <style lang="scss">
@@ -28,6 +38,7 @@ export default {
         }
 
         .card-header-title {
+            padding: 0.75rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
