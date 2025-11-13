@@ -5,7 +5,7 @@
             @click="toggle">
             <slot name="title"/>
         </p>
-        <div class="is-flex is-flex-shrink-3 min-w-0 overflow-scroll no-scrollbars">
+        <div class="is-flex is-flex-shrink-3 min-w-0 is-scrollable no-scrollbars">
             <slot name="controls"/>
         </div>
         <card-collapse v-if="collapsible"/>
