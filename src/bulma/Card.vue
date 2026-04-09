@@ -71,10 +71,14 @@ export default {
 
 <style lang="scss">
     .card {
-        position: relative;
+        overflow: hidden;
 
         &.is-rounded {
             border-radius: 0.5em;
+        }
+
+        > .card-header {
+            border-bottom: 1px solid var(--enso-surface-border);
         }
     }
 </style>

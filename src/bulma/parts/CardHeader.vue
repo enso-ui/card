@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { inject, defineProps } from 'vue';
+import { inject } from 'vue';
 import CardCollapse from '../controls/CardCollapse.vue';
 
 defineProps({
