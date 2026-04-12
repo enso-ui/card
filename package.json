@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/card",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Card component",
   "main": "bulma/index.js",
   "repository": {
