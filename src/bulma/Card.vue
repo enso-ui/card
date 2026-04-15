@@ -2,18 +2,20 @@
     <div class="card"
         v-if="!cardState.removed">
         <slot/>
+        <overlay v-if="overlay"/>
         <loader size="medium"
-            v-if="loading"/>
+            v-else-if="loading"/>
     </div>
 </template>
 
 <script>
 import Loader from '@enso-ui/loader/bulma';
+import Overlay from '@enso-ui/loader/bulma/overlay';
 
 export default {
     name: 'Card',
 
-    components: { Loader },
+    components: { Loader, Overlay },
 
     provide() {
         return {
@@ -28,6 +30,10 @@ export default {
             default: false,
         },
         collapsible: {
+            type: Boolean,
+            default: false,
+        },
+        overlay: {
             type: Boolean,
             default: false,
         },

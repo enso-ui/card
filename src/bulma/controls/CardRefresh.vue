@@ -1,7 +1,8 @@
 <template>
-    <card-control @click="$emit('refresh')">
+    <card-control @click="refresh">
         <span class="icon is-small">
-            <fa :icon="faSync"/>
+            <fa :icon="faSync"
+                :spin="loading"/>
         </span>
     </card-control>
 </template>
@@ -17,11 +18,26 @@ export default {
 
     components: { Fa, CardControl },
 
+    props: {
+        loading: {
+            type: Boolean,
+            default: false,
+        },
+    },
+
     data: () => ({
         faSync,
     }),
 
     emits: ['refresh'],
+
+    methods: {
+        refresh() {
+            if (!this.loading) {
+                this.$emit('refresh');
+            }
+        },
+    },
 };
 
 </script>
