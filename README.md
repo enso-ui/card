@@ -27,7 +27,7 @@ This package is also available through the full `enso-ui` workspace bundle.
 ## Features
 
 - exports the complete Bulma card shell used by Enso dashboards and detail views
-- provides collapsible, removable, loading, and overlay-aware card behavior through shared injected state
+- provides collapsible, removable, and loading card behavior through shared injected state
 - ships dedicated header, content, footer, and control primitives for consistent composition
 
 ## Usage
@@ -65,7 +65,6 @@ Import: `@enso-ui/card/bulma`
 Props:
 - `collapsed: boolean = false` initial collapsed state.
 - `collapsible: boolean = false` enables toggle behaviour.
-- `overlay: boolean = false` overlays the card content.
 - `loading: boolean = false` shows the card loader.
 
 Events:

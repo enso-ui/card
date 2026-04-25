@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/card",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "Composable Bulma card primitives for Enso UI.",
   "main": "bulma/index.js",
   "repository": {
@@ -25,14 +25,14 @@
   },
   "peerDependencies": {
     "@enso-ui/dropdown-indicator": "^3.1.0",
-    "@enso-ui/loader": "^4.2.0",
+    "@enso-ui/loader": "^4.2.2",
     "@enso-ui/transitions": "^2.2.0",
     "bulma": "^1.0.4",
     "vue": "^3.5.0"
   },
   "devDependencies": {
     "@enso-ui/dropdown-indicator": "^3.1.0",
-    "@enso-ui/loader": "^4.2.0",
+    "@enso-ui/loader": "^4.2.2",
     "@enso-ui/transitions": "^2.2.0",
     "bulma": "^1.0.4",
     "vue": "^3.5.0"
