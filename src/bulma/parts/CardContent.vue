@@ -13,16 +13,14 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { inject } from 'vue';
 import { Collapse } from '@enso-ui/transitions';
 
-export default {
+defineOptions({
     name: 'CardContent',
-
-    components: { Collapse },
-
-    inject: ['cardState'],
-
     inheritAttrs: false,
-};
+});
+
+const cardState = inject('cardState');
 </script>

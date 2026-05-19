@@ -1,7 +1,7 @@
 # Card
 
 [![License](https://img.shields.io/badge/license-MIT-10b981.svg)](https://github.com/enso-ui/card/blob/master/LICENSE)
-[![Stable](https://img.shields.io/badge/stable-4.1.0-2563eb.svg)](https://www.npmjs.com/package/@enso-ui/card)
+[![Stable](https://img.shields.io/badge/stable-4.1.1-2563eb.svg)](https://www.npmjs.com/package/@enso-ui/card)
 [![Downloads](https://img.shields.io/npm/dm/@enso-ui/card.svg)](https://www.npmjs.com/package/@enso-ui/card)
 [![Vue](https://img.shields.io/badge/vue-3.x-42b883.svg)](https://vuejs.org/)
 [![JavaScript](https://img.shields.io/badge/javascript-ES2020-f7df1e.svg)](https://developer.mozilla.org/docs/Web/JavaScript)

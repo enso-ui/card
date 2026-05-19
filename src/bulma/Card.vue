@@ -6,66 +6,53 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { provide, reactive, watch } from 'vue';
 import Loader from '@enso-ui/loader/bulma';
 
-export default {
-    name: 'Card',
+defineOptions({ name: 'Card' });
 
-    components: { Loader },
-
-    provide() {
-        return {
-            cardState: this.cardState,
-            toggle: this.toggle,
-        };
+const props = defineProps({
+    collapsed: {
+        type: Boolean,
+        default: false,
     },
-
-    props: {
-        collapsed: {
-            type: Boolean,
-            default: false,
-        },
-        collapsible: {
-            type: Boolean,
-            default: false,
-        },
-        loading: {
-            type: Boolean,
-            default: false,
-        },
+    collapsible: {
+        type: Boolean,
+        default: false,
     },
-
-    emits: ['collapse', 'expand', 'remove'],
-
-    data: v => ({
-        cardState: {
-            collapsed: v.collapsed,
-            collapsible: v.collapsible,
-            removed: false,
-        },
-    }),
-
-    watch: {
-        collapsed(collapsed) {
-            this.cardState.collapsed = collapsed;
-            this.$emit(collapsed ? 'collapse' : 'expand');
-        },
-        'cardState.removed': 'remove',
+    loading: {
+        type: Boolean,
+        default: false,
     },
+});
 
-    methods: {
-        toggle() {
-            if (this.cardState.collapsible) {
-                this.cardState.collapsed = !this.cardState.collapsed;
-                this.$emit(this.cardState.collapsed ? 'collapse' : 'expand');
-            }
-        },
-        remove() {
-            this.$emit('remove');
-        },
-    },
+const emit = defineEmits(['collapse', 'expand', 'remove']);
+
+const cardState = reactive({
+    collapsed: props.collapsed,
+    collapsible: props.collapsible,
+    removed: false,
+});
+
+const toggle = () => {
+    if (cardState.collapsible) {
+        cardState.collapsed = !cardState.collapsed;
+        emit(cardState.collapsed ? 'collapse' : 'expand');
+    }
 };
+
+provide('cardState', cardState);
+provide('toggle', toggle);
+
+watch(() => props.collapsed, collapsed => {
+    cardState.collapsed = collapsed;
+    emit(collapsed ? 'collapse' : 'expand');
+});
+
+watch(() => props.collapsible, collapsible => (cardState.collapsible = collapsible));
+
+watch(() => cardState.removed, removed => removed && emit('remove'));
 </script>
 
 <style lang="scss">

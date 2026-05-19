@@ -7,37 +7,22 @@
     </card-control>
 </template>
 
-<script>
+<script setup>
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { faSync }
 from '@fortawesome/free-solid-svg-icons';
 import CardControl from './CardControl.vue';
 
-export default {
-    name: 'CardRefresh',
+defineOptions({ name: 'CardRefresh' });
 
-    components: { Fa, CardControl },
-
-    props: {
-        loading: {
-            type: Boolean,
-            default: false,
-        },
+const props = defineProps({
+    loading: {
+        type: Boolean,
+        default: false,
     },
+});
 
-    data: () => ({
-        faSync,
-    }),
+const emit = defineEmits(['refresh']);
 
-    emits: ['refresh'],
-
-    methods: {
-        refresh() {
-            if (!this.loading) {
-                this.$emit('refresh');
-            }
-        },
-    },
-};
-
+const refresh = () => !props.loading && emit('refresh');
 </script>

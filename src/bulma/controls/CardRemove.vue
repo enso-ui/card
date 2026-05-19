@@ -4,14 +4,11 @@
     </card-control>
 </template>
 
-<script>
+<script setup>
+import { inject } from 'vue';
 import CardControl from './CardControl.vue';
 
-export default {
-    name: 'CardRemove',
+defineOptions({ name: 'CardRemove' });
 
-    components: { CardControl },
-
-    inject: ['cardState'],
-};
+const cardState = inject('cardState');
 </script>

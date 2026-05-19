@@ -4,8 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-    name: 'CardImage',
-};
+<script setup>
+defineOptions({ name: 'CardImage' });
 </script>

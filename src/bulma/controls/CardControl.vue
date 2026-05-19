@@ -4,10 +4,8 @@
     </a>
 </template>
 
-<script>
-export default {
-    name: 'CardControl',
-};
+<script setup>
+defineOptions({ name: 'CardControl' });
 </script>
 
 <style lang="scss">

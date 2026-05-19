@@ -4,17 +4,13 @@
     </card-control>
 </template>
 
-<script>
-
+<script setup>
+import { inject } from 'vue';
 import DropdownIndicator from '@enso-ui/dropdown-indicator';
 import CardControl from './CardControl.vue';
 
-export default {
-    name: 'CardCollapse',
+defineOptions({ name: 'CardCollapse' });
 
-    components: { DropdownIndicator, CardControl },
-
-    inject: ['cardState', 'toggle'],
-};
-
+const cardState = inject('cardState');
+const toggle = inject('toggle');
 </script>

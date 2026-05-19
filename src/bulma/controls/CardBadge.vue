@@ -6,23 +6,19 @@
     </card-control>
 </template>
 
-<script>
+<script setup>
 import CardControl from './CardControl.vue';
 
-export default {
-    name: 'CardBadge',
+defineOptions({ name: 'CardBadge' });
 
-    components: { CardControl },
-
-    props: {
-        label: {
-            type: [String, Number],
-            required: true,
-        },
-        type: {
-            type: String,
-            default: null,
-        },
+defineProps({
+    label: {
+        type: [String, Number],
+        required: true,
     },
-};
+    type: {
+        type: String,
+        default: null,
+    },
+});
 </script>

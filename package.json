@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/card",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Composable Bulma card primitives for Enso UI.",
   "main": "bulma/index.js",
   "repository": {

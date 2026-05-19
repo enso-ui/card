@@ -4,3 +4,7 @@
         <slot/>
     </a>
 </template>
+
+<script setup>
+defineOptions({ name: 'CardFooterItem' });
+</script>
