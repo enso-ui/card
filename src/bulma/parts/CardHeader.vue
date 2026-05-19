@@ -8,20 +8,13 @@
         <div class="is-flex is-flex-shrink-3 min-w-0 is-scrollable no-scrollbars">
             <slot name="controls"/>
         </div>
-        <card-collapse v-if="collapsible"/>
+        <card-collapse v-if="cardState.collapsible"/>
     </header>
 </template>
 
 <script setup>
 import { inject } from 'vue';
 import CardCollapse from '../controls/CardCollapse.vue';
-
-defineProps({
-    collapsible: {
-        type: Boolean,
-        default: false,
-    },
-});
 
 const cardState = inject('cardState');
 const toggle = inject('toggle');

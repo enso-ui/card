@@ -1,7 +1,7 @@
 # Card
 
 [![License](https://img.shields.io/badge/license-MIT-10b981.svg)](https://github.com/enso-ui/card/blob/master/LICENSE)
-[![Stable](https://img.shields.io/badge/stable-4.0.7-2563eb.svg)](https://www.npmjs.com/package/@enso-ui/card)
+[![Stable](https://img.shields.io/badge/stable-4.1.0-2563eb.svg)](https://www.npmjs.com/package/@enso-ui/card)
 [![Downloads](https://img.shields.io/npm/dm/@enso-ui/card.svg)](https://www.npmjs.com/package/@enso-ui/card)
 [![Vue](https://img.shields.io/badge/vue-3.x-42b883.svg)](https://vuejs.org/)
 [![JavaScript](https://img.shields.io/badge/javascript-ES2020-f7df1e.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
@@ -35,17 +35,16 @@ This package is also available through the full `enso-ui` workspace bundle.
 ```vue
 <script setup>
 import {
-    Card, CardHeader, CardContent, CardBadge, CardRefresh, CardCollapse,
+    Card, CardHeader, CardContent, CardBadge, CardRefresh,
 } from '@enso-ui/card/bulma';
 </script>
 
 <Card collapsible>
-    <CardHeader collapsible>
+    <CardHeader>
         <template #title>Orders</template>
         <template #controls>
             <CardBadge :label="12" />
             <CardRefresh @refresh="reload" />
-            <CardCollapse />
         </template>
     </CardHeader>
     <CardContent>
@@ -78,8 +77,7 @@ Header wrapper with `title` and `controls` slots.
 
 Import: `@enso-ui/card/bulma`
 
-Props:
-- `collapsible: boolean = false` renders an inline collapse control.
+When the parent `Card` is collapsible, the header renders the collapse control from the injected card state.
 
 ### `CardContent`
 
